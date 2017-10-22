@@ -29,6 +29,9 @@ func Index(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetModels(w http.ResponseWriter, r *http.Request) {
+	// enabling CORS to work with Angular on the same machine
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+
 	models := Models{
 		Model{ID: 1, Name: "Fibonacci"},
 		Model{ID: 2, Name: "Couchy"},
